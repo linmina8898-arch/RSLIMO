@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>瑞陞租車 RS Limo | 行止之間，盡顯非凡</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold-light: #F9E498;
+            --gold-main: #D4AF37;
+            --gold-dark: #996515;
+            --black-bg: #0A0A0A;
+            --black-card: #161616;
+        }
+
+        body {
+            background-color: var(--black-bg);
+            color: #E0E0E0;
+            font-family: 'Noto Sans TC', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .serif { font-family: 'Noto Serif TC', serif; }
+
+        /* 金屬質感漸層文字 */
+        .text-gold-gradient {
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-main) 50%, var(--gold-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+
+        /* 尊榮金邊按鈕 */
+        .btn-gold {
+            background: linear-gradient(135deg, var(--gold-main) 0%, var(--gold-dark) 100%);
+            color: #000;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
+            filter: brightness(1.1);
+        }
+
+        /* 卡片設計 */
+        .glass-card {
+            background: var(--black-card);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            transform: translateY(-5px);
+        }
+
+        /* 裝飾線條 */
+        .divider-gold {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold-main), transparent);
+            margin: 2rem 0;
+        }
+
+        /* Hero 區塊背景微光 */
+        .hero-glow {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80vw;
+            height: 80vh;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* 自定義捲軸 */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #000; }
+        ::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 10px; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- 導覽列 -->
+    <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <span class="text-2xl font-bold text-gold-gradient tracking-widest serif">RS LIMO</span>
+                <span class="text-xs text-gray-500 border-l border-gray-700 pl-2 tracking-widest hidden sm:block">瑞陞租車</span>
+            </div>
+            <div class="hidden md:flex space-x-8 text-sm tracking-widest font-light">
+                <a href="#about" class="hover:text-gold-main transition">關於瑞陞</a>
+                <a href="#values" class="hover:text-gold-main transition">核心價值</a>
+                <a href="#corporate" class="hover:text-gold-main transition">企業合作</a>
+                <a href="#contact" class="hover:text-gold-main transition">立即預約</a>
+            </div>
+            <a href="tel:0915926166" class="text-gold-main font-bold">0915-926-166</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 lg:pt-40 pb-20 px-6 flex flex-col items-center justify-center">
+        <div class="hero-glow"></div>
+        <div class="max-w-5xl w-full text-center z-10 mb-12">
+            <p class="text-gold-main tracking-[0.5em] mb-6 animate-pulse">SUPREME SERVICE</p>
+            <h1 class="text-5xl md:text-7xl font-bold mb-8 leading-tight serif">
+                行止之間<br>
+                <span class="text-gold-gradient">盡顯非凡</span>
+            </h1>
+            <p class="text-gray-400 text-lg md:text-xl font-light mb-12 max-w-2xl mx-auto leading-relaxed">
+                逾二十載深厚底蘊，專注於商務成功的序章。<br>
+                我們不只在乎速度，更在乎您的風度。
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <a href="https://line.me/ti/p/@rs168" class="btn-gold px-12 py-4 rounded-full text-lg tracking-widest">
+                    立即諮詢行程
+                </a>
+                <a href="#about" class="px-12 py-4 rounded-full border border-gold-main/30 hover:border-gold-main transition text-lg tracking-widest">
+                    瞭解服務細節
+                </a>
+            </div>
+        </div>
+
+        <!-- 最顯眼處放置：車隊與服務視覺 Banner -->
+        <div class="max-w-6xl w-full z-10 relative group mt-8 lg:mt-16">
+            <!-- 發光背板特效 -->
+            <div class="absolute -inset-1 rounded-2xl blur-lg opacity-40 transition duration-1000 group-hover:opacity-70" style="background: linear-gradient(135deg, var(--gold-dark), var(--gold-main), var(--gold-dark));"></div>
+            <!-- 圖片本體 -->
+            <img src="3380819.jpg" alt="尊榮商務．專業接送車款" class="relative w-full h-auto rounded-2xl border border-white/20 shadow-[0_0_40px_rgba(0,0,0,0.8)] object-cover">
+        </div>
+    </section>
+
+    <!-- 信任背書區 -->
+    <section id="about" class="py-24 bg-zinc-900/30">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="aspect-video bg-zinc-800 rounded-lg overflow-hidden border border-white/5">
+                        <div class="absolute inset-0 flex items-center justify-center text-zinc-700 italic text-sm">
+                                                     </div>
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 bg-gold-main p-8 text-black hidden lg:block">
+                        <p class="text-4xl font-bold serif">20+</p>
+                        <p class="text-sm tracking-tighter font-bold">YEARS OF EXCELLENCE</p>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-8 serif text-gold-gradient">卓越實力，標竿信賴</h2>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        瑞陞租車 (RS Limo) 擁有超過 20 年的專業派車經驗。作為政府正式登記立案的合法租賃公司，我們長期深耕於新竹科學園區。
+                    </p>
+                    <div class="p-6 border-l-2 border-gold-main bg-white/5">
+                        <p class="text-white font-medium mb-2 italic">「多家科技巨頭、跨國企業之指定合作夥伴。」</p>
+                        <p class="text-sm text-gray-500">穩定且高品質的服務，是我們最引以為傲的勳章。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心價值區 (已移除圖示，改為大器簡潔風格) -->
+    <section id="values" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-gold-main tracking-widest text-sm mb-4 font-bold">CORE VALUES</h2>
+                <h3 class="text-4xl font-bold serif">超越標準，定義卓越</h3>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- 價值 1 -->
+                <div class="glass-card p-10 rounded-2xl text-center">
+                    <div class="w-10 h-[1px] bg-gold-main mx-auto mb-8"></div>
+                    <h4 class="text-xl font-bold mb-5 text-gold-main serif tracking-widest">絕對合法</h4>
+                    <p class="text-gray-400 text-sm font-light leading-relaxed">
+                        經政府核准立案，堅決摒棄非法白牌車。所有車輛皆符合法規，守護經營底線。
+                    </p>
+                </div>
+                <!-- 價值 2 -->
+                <div class="glass-card p-10 rounded-2xl text-center">
+                    <div class="w-10 h-[1px] bg-gold-main mx-auto mb-8"></div>
+                    <h4 class="text-xl font-bold mb-5 text-gold-main serif tracking-widest">菁英司機</h4>
+                    <p class="text-gray-400 text-sm font-light leading-relaxed">
+                        嚴格篩選、具備高度職業素養。準時是基本，禮貌是日常，確保行程靜謐平穩。
+                    </p>
+                </div>
+                <!-- 價值 3 -->
+                <div class="glass-card p-10 rounded-2xl text-center">
+                    <div class="w-10 h-[1px] bg-gold-main mx-auto mb-8"></div>
+                    <h4 class="text-xl font-bold mb-5 text-gold-main serif tracking-widest">嚴選車況</h4>
+                    <p class="text-gray-400 text-sm font-light leading-relaxed">
+                        高標定期保養與每日清潔。讓您踏入車室起，感受如家般的潔淨舒適。
+                    </p>
+                </div>
+                <!-- 價值 4 -->
+                <div class="glass-card p-10 rounded-2xl text-center">
+                    <div class="w-10 h-[1px] bg-gold-main mx-auto mb-8"></div>
+                    <h4 class="text-xl font-bold mb-5 text-gold-main serif tracking-widest">高額保障</h4>
+                    <p class="text-gray-400 text-sm font-light leading-relaxed">
+                        全方位 500 萬等級乘客險，安全不容妥協，讓您的旅途從啟程到抵達皆有無憂保障。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 企業特約專區 -->
+    <section id="corporate" class="py-24 bg-white/5 border-y border-white/5 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <h3 class="text-3xl md:text-5xl font-bold mb-8 serif">誠邀企業公司行號<br><span class="text-gold-gradient">洽談特約合作</span></h3>
+            <p class="text-gray-400 mb-12 leading-relaxed">
+                我們深知企業對於安全、準時、隱私的高度要求。<br>
+                提供專人管家式對接，簡化行政流程，為您的貴賓提供最體面的移動接待方案。
+            </p>
+            <div class="divider-gold opacity-30"></div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-4">
+                    <p class="text-gold-main font-bold text-xl md:text-2xl serif">24H 全年無休</p>
+                    <p class="text-sm text-gray-500 mt-2 tracking-widest uppercase">皆可派車</p>
+                </div>
+                <div class="p-4 border-y md:border-y-0 md:border-x border-white/10">
+                    <p class="text-gold-main font-bold text-xl md:text-2xl serif">VIP 商務接待</p>
+                    <p class="text-sm text-gray-500 mt-2 tracking-widest uppercase">尊榮禮遇</p>
+                </div>
+                <div class="p-4">
+                    <p class="text-gold-main font-bold text-xl md:text-2xl serif">企業月結</p>
+                    <p class="text-sm text-gray-500 mt-2 tracking-widest uppercase">簡化對帳流程</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 預約聯絡區 -->
+    <section id="contact" class="py-32 px-6">
+        <div class="max-w-3xl mx-auto glass-card p-12 rounded-3xl text-center">
+            <h3 class="text-3xl font-bold mb-4 serif text-gold-gradient">尊榮預約．即刻啟航</h3>
+            <p class="text-gray-400 mb-10">無論機場接送、商務往返或包車旅遊，請與我們的專員連繫。</p>
+            
+            <div class="space-y-6">
+                <a href="tel:0915926166" class="block group">
+                    <p class="text-xs text-gray-500 tracking-widest mb-1 group-hover:text-gold-main transition uppercase">Service Hotline</p>
+                    <p class="text-3xl md:text-4xl font-bold text-white tracking-tighter">0915-926-166</p>
+                </a>
+                
+                <div class="divider-gold opacity-20"></div>
+                
+                <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-12">
+                    <div class="text-center">
+                        <p class="text-xs text-gray-500 tracking-widest mb-2 uppercase">Line Official</p>
+                        <a href="https://line.me/ti/p/@rs168" class="text-xl text-gold-main font-medium">@rs168</a>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-xs text-gray-500 tracking-widest mb-2 uppercase">Official Email</p>
+                        <a href="mailto:RS@RS-LIMO.COM" class="text-xl text-gray-400 hover:text-white transition uppercase">RS@RS-LIMO.COM</a>
+                    </div>
+                </div>
+
+                <div class="pt-10">
+                    <a href="https://line.me/ti/p/@rs168" class="btn-gold px-16 py-5 rounded-full text-xl inline-block tracking-widest">
+                        立即 LINE 線上詢價
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/5 text-center px-6">
+        <div class="max-w-7xl mx-auto text-gray-600 text-sm font-light">
+            <p class="mb-4 text-gold-main font-medium tracking-widest uppercase">選擇瑞陞，瑞氣東昇，陞級您的每一趟出行</p>
+            <p>&copy; 2024 瑞陞租車 RS LIMO. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // 平滑滾動
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
