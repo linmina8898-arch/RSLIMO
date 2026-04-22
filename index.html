@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>瑞陞租車 RS Limo | 行止之間，盡顯非凡</title>
+    <!-- 加入自動跳轉設定，0秒後跳轉到新網址 -->
+    <meta http-equiv="refresh" content="0;url=http://www.rs-limo.com/">
+    
+    <!-- 建議加入一小段 JavaScript 作為備用跳轉方案 -->
+    <script>
+        window.location.href = "http://www.rs-limo.com/";
+    </script>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
@@ -302,15 +310,15 @@
                 
                 <div class="w-full max-w-sm mx-auto h-[1px] bg-gradient-to-r from-transparent via-gold-main/40 to-transparent"></div>
                 
-                <!-- 強制橫向並列 -->
-                <div class="flex flex-row justify-center items-center space-x-6 md:space-x-16">
+                <!-- 強制橫向並列，並縮小間距與字體以保持單行 -->
+                <div class="flex flex-row justify-center items-center space-x-4 md:space-x-12">
                     <div class="text-center">
-                        <p class="text-[10px] md:text-xs text-gray-500 tracking-widest mb-1 uppercase">Line Official</p>
-                        <a href="https://line.me/ti/p/@rs168" class="text-lg md:text-2xl text-gold-main font-bold hover:text-white transition">@rs168</a>
+                        <p class="text-[10px] md:text-xs text-gray-500 tracking-widest mb-1 uppercase whitespace-nowrap">Line Official</p>
+                        <a href="https://line.me/ti/p/@rs168" class="text-base md:text-xl text-gold-main font-bold hover:text-white transition whitespace-nowrap">@rs168</a>
                     </div>
-                    <div class="text-center border-l border-white/10 pl-6 md:pl-16">
-                        <p class="text-[10px] md:text-xs text-gray-500 tracking-widest mb-1 uppercase">Official Email</p>
-                        <a href="mailto:RS@RS-LIMO.COM" class="text-lg md:text-2xl text-white font-bold hover:text-gold-main transition uppercase">RS@RS-LIMO.COM</a>
+                    <div class="text-center border-l border-white/10 pl-4 md:pl-12">
+                        <p class="text-[10px] md:text-xs text-gray-500 tracking-widest mb-1 uppercase whitespace-nowrap">Official Email</p>
+                        <a href="mailto:RS@RS-LIMO.COM" class="text-sm md:text-xl text-white font-bold hover:text-gold-main transition uppercase whitespace-nowrap">RS@RS-LIMO.COM</a>
                     </div>
                 </div>
 
