@@ -20,7 +20,6 @@
             color: #E0E0E0;
             font-family: 'Noto Sans TC', sans-serif;
             overflow-x: hidden;
-            /* 增加科技感金屬網格底紋，解決版面空虛 */
             background-image: 
                 linear-gradient(to right, rgba(212, 175, 55, 0.03) 1px, transparent 1px),
                 linear-gradient(to bottom, rgba(212, 175, 55, 0.03) 1px, transparent 1px);
@@ -28,6 +27,9 @@
         }
 
         .serif { font-family: 'Noto Serif TC', serif; }
+        
+        /* 避免中文標題突兀換行 */
+        .keep-all { word-break: keep-all; }
 
         /* 金屬質感漸層文字 */
         .text-gold-gradient {
@@ -75,7 +77,7 @@
             margin: 2rem 0;
         }
 
-        /* 環境光暈 - 讓背景不空虛 */
+        /* 環境光暈 */
         .glow-orb {
             position: absolute;
             border-radius: 50%;
@@ -101,36 +103,36 @@
     <nav class="fixed w-full z-50 bg-black/90 backdrop-blur-md border-b border-gold-main/20 px-6 py-4 shadow-lg">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <div class="flex items-center space-x-2">
-                <span class="text-2xl font-bold text-gold-gradient tracking-widest serif">RS LIMO</span>
+                <span class="text-xl md:text-2xl font-bold text-gold-gradient tracking-widest serif">RS LIMO</span>
                 <span class="text-xs text-gray-400 border-l border-gray-700 pl-2 tracking-widest hidden sm:block">瑞陞租車</span>
             </div>
-            <div class="hidden md:flex space-x-8 text-sm tracking-widest font-light">
+            <div class="hidden md:flex space-x-6 lg:space-x-8 text-xs lg:text-sm tracking-widest font-light">
                 <a href="#about" class="hover:text-gold-main transition">卓越實力</a>
                 <a href="#booking" class="hover:text-gold-main transition">自助預約</a>
                 <a href="#values" class="hover:text-gold-main transition">核心價值</a>
                 <a href="#contact" class="hover:text-gold-main transition">聯絡我們</a>
             </div>
-            <a href="tel:0915926166" class="text-gold-main font-bold border border-gold-main/30 px-4 py-1.5 rounded-full hover:bg-gold-main hover:text-black transition">0915-926-166</a>
+            <a href="tel:0915926166" class="text-gold-main font-bold border border-gold-main/30 px-3 py-1.5 md:px-4 text-sm rounded-full hover:bg-gold-main hover:text-black transition">0915-926-166</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative min-h-[90vh] pt-32 pb-16 px-6 flex flex-col items-center justify-center">
-        <div class="max-w-5xl w-full text-center z-10 mb-10">
+    <section class="relative min-h-[70vh] pt-28 pb-10 px-4 md:px-6 flex flex-col items-center justify-center">
+        <div class="max-w-5xl w-full text-center z-10">
             <p class="text-gold-main tracking-[0.5em] mb-4 text-xs md:text-sm animate-pulse font-bold">SUPREME SERVICE</p>
-            <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight serif">
-                行止之間<br>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight serif keep-all flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4">
+                <span>行止之間</span>
                 <span class="text-gold-gradient">盡顯非凡</span>
             </h1>
-            <p class="text-gray-300 text-base md:text-xl font-light mb-12 max-w-2xl mx-auto leading-relaxed">
-                逾二十載深厚底蘊，專注於商務成功的序章。<br>
+            <p class="text-gray-300 text-sm md:text-lg lg:text-xl font-light mb-10 max-w-2xl mx-auto leading-relaxed keep-all">
+                逾二十載深厚底蘊，專注於商務成功的序章。<br class="hidden md:block">
                 我們不只在乎速度，更在乎您的風度。
             </p>
-            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-                <a href="https://line.me/ti/p/@rs168" class="btn-gold px-10 md:px-14 py-4 md:py-5 rounded-full text-base md:text-lg tracking-widest font-bold shadow-[0_0_30px_rgba(212,175,55,0.3)]">
+            <div class="flex flex-row justify-center space-x-3 md:space-x-6">
+                <a href="https://line.me/ti/p/@rs168" class="btn-gold px-6 md:px-12 py-3 md:py-4 rounded-full text-sm md:text-lg tracking-widest font-bold shadow-[0_0_30px_rgba(212,175,55,0.3)]">
                     立即諮詢行程
                 </a>
-                <a href="#booking" class="px-10 md:px-14 py-4 md:py-5 rounded-full border border-gold-main/50 hover:border-gold-main hover:bg-gold-main/10 transition text-base md:text-lg tracking-widest text-gold-light">
+                <a href="#booking" class="px-6 md:px-12 py-3 md:py-4 rounded-full border border-gold-main/50 hover:border-gold-main hover:bg-gold-main/10 transition text-sm md:text-lg tracking-widest text-gold-light">
                     自助詢價系統
                 </a>
             </div>
@@ -138,64 +140,65 @@
     </section>
 
     <!-- 信任背書區 -->
-    <section id="about" class="py-24 bg-gradient-to-b from-black/0 to-zinc-900/40 border-y border-white/5">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row gap-16 items-center justify-between">
+    <section id="about" class="py-16 bg-gradient-to-b from-black/0 to-zinc-900/40 border-y border-white/5">
+        <div class="max-w-6xl mx-auto px-4 md:px-6">
+            <div class="flex flex-col md:flex-row gap-8 lg:gap-16 items-center justify-between">
                 <!-- 左側大型數字視覺 -->
-                <div class="w-full md:w-5/12 text-center md:text-right">
+                <div class="w-full md:w-4/12 text-center md:text-right">
                     <div class="inline-block relative">
-                        <span class="text-8xl md:text-9xl lg:text-[10rem] font-bold serif text-gold-gradient opacity-90">20</span>
-                        <span class="text-4xl md:text-6xl font-bold text-gold-main absolute top-4 -right-12">+</span>
-                        <p class="text-sm md:text-lg tracking-[0.3em] text-gray-400 mt-4 font-bold md:pr-4">YEARS OF EXCELLENCE</p>
+                        <span class="text-7xl md:text-8xl lg:text-9xl font-bold serif text-gold-gradient opacity-90">20</span>
+                        <span class="text-3xl md:text-5xl font-bold text-gold-main absolute top-2 md:top-4 -right-8 md:-right-10">+</span>
+                        <p class="text-xs md:text-sm lg:text-base tracking-[0.2em] md:tracking-[0.3em] text-gray-400 mt-2 font-bold pr-2 md:pr-4 keep-all">YEARS OF EXCELLENCE</p>
                     </div>
                 </div>
                 <!-- 裝飾分隔線 -->
-                <div class="hidden md:block w-px h-40 bg-gradient-to-b from-transparent via-gold-main/50 to-transparent"></div>
+                <div class="hidden md:block w-px h-32 bg-gradient-to-b from-transparent via-gold-main/50 to-transparent"></div>
                 <!-- 右側文字 -->
-                <div class="w-full md:w-6/12">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6 serif text-white tracking-widest">卓越實力，標竿信賴</h2>
-                    <div class="space-y-4 mb-8">
-                        <p class="text-gray-300 leading-relaxed text-lg font-light">
+                <div class="w-full md:w-7/12">
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 serif text-white tracking-widest keep-all">卓越實力，標竿信賴</h2>
+                    <div class="space-y-3 mb-6">
+                        <p class="text-gray-300 leading-relaxed text-sm md:text-base font-light">
                             本公司創辦人深耕小客車租賃產業 20 年，現任<span class="text-gold-main font-bold tracking-widest">新竹市小客車租賃商業同業公會理事</span>。我們不僅提供高品質的商務接送，更長期致力於推動產業服務標準化。
                         </p>
-                        <p class="text-gray-300 leading-relaxed text-lg font-light">
+                        <p class="text-gray-300 leading-relaxed text-sm md:text-base font-light">
                             針對科學園區企業之需求，我們堅持法規遵循與透明化管理，確保每一趟差旅皆符合最高安全標準與乘客權益保障，是您最值得信賴的企業出行合作夥伴。
                         </p>
                     </div>
-                    <div class="p-6 border-l-4 border-gold-main bg-black/60 shadow-[0_4px_20px_rgba(0,0,0,0.5)] rounded-r-xl">
-                        <p class="text-gold-light font-medium mb-2 italic text-lg md:text-xl tracking-wide">「多家科技巨頭、跨國企業之指定合作夥伴。」</p>
-                        <p class="text-sm text-gray-400 tracking-widest">穩定且高品質的服務，是我們最引以為傲的勳章。</p>
+                    <div class="p-4 md:p-6 border-l-4 border-gold-main bg-black/60 shadow-[0_4px_20px_rgba(0,0,0,0.5)] rounded-r-xl">
+                        <p class="text-gold-light font-medium mb-1 italic text-base md:text-lg tracking-wide keep-all">「多家科技巨頭、跨國企業之指定合作夥伴。」</p>
+                        <p class="text-xs md:text-sm text-gray-400 tracking-widest keep-all">穩定且高品質的服務，是我們最引以為傲的勳章。</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 自助詢價系統 (改為全寬大氣卡片設計，無需圖片) -->
-    <section id="booking" class="py-24 px-6 relative">
+    <!-- 自助詢價系統 -->
+    <section id="booking" class="py-16 px-4 md:px-6 relative">
         <div class="max-w-5xl mx-auto">
-            <div class="glass-card p-10 md:p-16 rounded-3xl text-center border border-gold-main/30 relative overflow-hidden group">
+            <div class="glass-card p-6 md:p-12 rounded-3xl text-center border border-gold-main/30 relative overflow-hidden group">
                 <!-- 卡片內部發光效果 -->
-                <div class="absolute top-0 right-0 w-64 h-64 bg-gold-main/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-gold-main/20 transition duration-700"></div>
+                <div class="absolute top-0 right-0 w-48 h-48 md:w-64 md:h-64 bg-gold-main/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-gold-main/20 transition duration-700"></div>
                 
-                <h2 class="text-gold-main tracking-[0.4em] text-sm mb-4 font-bold relative z-10">ONLINE BOOKING</h2>
-                <h3 class="text-4xl md:text-5xl font-bold serif mb-8 text-white relative z-10">自助詢價．最省時間</h3>
-                <p class="text-gray-300 leading-relaxed mb-10 text-lg md:text-xl max-w-3xl mx-auto font-light relative z-10">
+                <h2 class="text-gold-main tracking-[0.4em] text-xs md:text-sm mb-3 font-bold relative z-10">ONLINE BOOKING</h2>
+                <h3 class="text-2xl md:text-4xl font-bold serif mb-6 text-white relative z-10 keep-all">自助詢價．最省時間</h3>
+                <p class="text-gray-300 leading-relaxed mb-8 text-sm md:text-lg max-w-3xl mx-auto font-light relative z-10">
                     無需等待客服回覆！只需輸入您的行程資訊，系統將立即為您計算報價並完成預約安排。無論是熱門時段或特殊需求，線上預約讓您的行程盡在掌握。
                 </p>
                 
-                <div class="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12 mb-12 relative z-10">
-                    <div class="flex items-center text-white text-lg tracking-widest">
-                        <span class="flex items-center justify-center w-8 h-8 rounded-full bg-gold-main/20 text-gold-main mr-3">✓</span> 
+                <!-- 強制橫向並列 -->
+                <div class="flex flex-row justify-center items-center gap-4 md:gap-12 mb-8 relative z-10">
+                    <div class="flex items-center text-white text-sm md:text-lg tracking-widest keep-all">
+                        <span class="flex items-center justify-center w-5 h-5 md:w-8 md:h-8 rounded-full bg-gold-main/20 text-gold-main mr-2 md:mr-3 text-xs md:text-base">✓</span> 
                         快速預約
                     </div>
-                    <div class="flex items-center text-white text-lg tracking-widest">
-                        <span class="flex items-center justify-center w-8 h-8 rounded-full bg-gold-main/20 text-gold-main mr-3">✓</span> 
+                    <div class="flex items-center text-white text-sm md:text-lg tracking-widest keep-all">
+                        <span class="flex items-center justify-center w-5 h-5 md:w-8 md:h-8 rounded-full bg-gold-main/20 text-gold-main mr-2 md:mr-3 text-xs md:text-base">✓</span> 
                         確保行程
                     </div>
                 </div>
                 
-                <a href="https://line.me/ti/p/@rs168" class="relative z-10 btn-gold px-12 py-5 rounded-full text-lg md:text-xl tracking-[0.2em] inline-block font-bold shadow-2xl">
+                <a href="https://line.me/ti/p/@rs168" class="relative z-10 btn-gold px-8 md:px-12 py-3 md:py-4 rounded-full text-base md:text-lg tracking-[0.2em] inline-block font-bold shadow-xl">
                     立即體驗線上詢價 👉
                 </a>
             </div>
@@ -203,44 +206,44 @@
     </section>
 
     <!-- 核心價值區 -->
-    <section id="values" class="py-24 px-6 bg-zinc-900/20">
+    <section id="values" class="py-16 px-4 md:px-6 bg-zinc-900/20">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-gold-main tracking-widest text-sm mb-2 font-bold">CORE VALUES</h2>
-                <h3 class="text-4xl md:text-5xl font-bold serif text-white">超越標準，定義卓越</h3>
+            <div class="text-center mb-10 md:mb-12">
+                <h2 class="text-gold-main tracking-widest text-xs md:text-sm mb-2 font-bold">CORE VALUES</h2>
+                <h3 class="text-2xl md:text-4xl font-bold serif text-white keep-all">超越標準，定義卓越</h3>
             </div>
             
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
                 <!-- 價值 1 -->
-                <div class="glass-card p-8 md:p-10 rounded-2xl text-center flex flex-col justify-center transform transition hover:-translate-y-2">
-                    <div class="w-16 h-[2px] bg-gold-main mx-auto mb-6"></div>
-                    <h4 class="text-xl md:text-2xl font-bold mb-4 text-gold-light serif tracking-widest">絕對合法</h4>
-                    <p class="text-gray-400 text-sm md:text-base font-light leading-relaxed">
-                        政府核准立案，堅決摒棄非法白牌車。所有車輛皆符法規，守護底線。
+                <div class="glass-card p-5 md:p-8 rounded-2xl text-center flex flex-col justify-center transform transition hover:-translate-y-1">
+                    <div class="w-10 md:w-16 h-[2px] bg-gold-main mx-auto mb-4 md:mb-6"></div>
+                    <h4 class="text-lg md:text-xl font-bold mb-3 text-gold-light serif tracking-widest keep-all">絕對合法</h4>
+                    <p class="text-gray-400 text-xs md:text-sm font-light leading-relaxed">
+                        政府核准立案，堅決摒棄非法白牌車。所有車輛皆符法規。
                     </p>
                 </div>
                 <!-- 價值 2 -->
-                <div class="glass-card p-8 md:p-10 rounded-2xl text-center flex flex-col justify-center transform transition hover:-translate-y-2">
-                    <div class="w-16 h-[2px] bg-gold-main mx-auto mb-6"></div>
-                    <h4 class="text-xl md:text-2xl font-bold mb-4 text-gold-light serif tracking-widest">菁英司機</h4>
-                    <p class="text-gray-400 text-sm md:text-base font-light leading-relaxed">
-                        嚴格篩選具高度職業素養。準時是基本，禮貌是日常，確保靜謐平穩。
+                <div class="glass-card p-5 md:p-8 rounded-2xl text-center flex flex-col justify-center transform transition hover:-translate-y-1">
+                    <div class="w-10 md:w-16 h-[2px] bg-gold-main mx-auto mb-4 md:mb-6"></div>
+                    <h4 class="text-lg md:text-xl font-bold mb-3 text-gold-light serif tracking-widest keep-all">菁英司機</h4>
+                    <p class="text-gray-400 text-xs md:text-sm font-light leading-relaxed">
+                        嚴格篩選具高度職業素養。準時是基本，禮貌是日常。
                     </p>
                 </div>
                 <!-- 價值 3 -->
-                <div class="glass-card p-8 md:p-10 rounded-2xl text-center flex flex-col justify-center transform transition hover:-translate-y-2">
-                    <div class="w-16 h-[2px] bg-gold-main mx-auto mb-6"></div>
-                    <h4 class="text-xl md:text-2xl font-bold mb-4 text-gold-light serif tracking-widest">嚴選車況</h4>
-                    <p class="text-gray-400 text-sm md:text-base font-light leading-relaxed">
-                        高標定期保養與每日清潔。讓您踏入車室起，感受如家般的潔淨舒適。
+                <div class="glass-card p-5 md:p-8 rounded-2xl text-center flex flex-col justify-center transform transition hover:-translate-y-1">
+                    <div class="w-10 md:w-16 h-[2px] bg-gold-main mx-auto mb-4 md:mb-6"></div>
+                    <h4 class="text-lg md:text-xl font-bold mb-3 text-gold-light serif tracking-widest keep-all">嚴選車況</h4>
+                    <p class="text-gray-400 text-xs md:text-sm font-light leading-relaxed">
+                        高標定期保養與清潔。讓您踏入車室起，感受如家舒適。
                     </p>
                 </div>
                 <!-- 價值 4 -->
-                <div class="glass-card p-8 md:p-10 rounded-2xl text-center flex flex-col justify-center transform transition hover:-translate-y-2">
-                    <div class="w-16 h-[2px] bg-gold-main mx-auto mb-6"></div>
-                    <h4 class="text-xl md:text-2xl font-bold mb-4 text-gold-light serif tracking-widest">高額保障</h4>
-                    <p class="text-gray-400 text-sm md:text-base font-light leading-relaxed">
-                        全方位 500 萬等級乘客險，安全不容妥協，讓旅途從啟程到抵達皆無憂。
+                <div class="glass-card p-5 md:p-8 rounded-2xl text-center flex flex-col justify-center transform transition hover:-translate-y-1">
+                    <div class="w-10 md:w-16 h-[2px] bg-gold-main mx-auto mb-4 md:mb-6"></div>
+                    <h4 class="text-lg md:text-xl font-bold mb-3 text-gold-light serif tracking-widest keep-all">高額保障</h4>
+                    <p class="text-gray-400 text-xs md:text-sm font-light leading-relaxed">
+                        全方位 500 萬等級乘客險，讓旅途從啟程到抵達皆無憂。
                     </p>
                 </div>
             </div>
@@ -248,30 +251,35 @@
     </section>
 
     <!-- 企業特約專區 -->
-    <section id="corporate" class="py-24 bg-black border-y border-gold-main/20 relative overflow-hidden">
-        <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
-            <h3 class="text-4xl md:text-5xl font-bold mb-8 serif text-white">誠邀企業公司行號<br><span class="text-gold-gradient mt-3 inline-block">洽談特約合作</span></h3>
-            <p class="text-gray-300 mb-12 leading-relaxed text-base md:text-xl max-w-3xl mx-auto font-light">
-                我們深知企業對於安全、準時、隱私的高度要求。<br>
-                提供專人管家式對接，簡化行政流程，為您的貴賓提供最體面的移動接待方案。
+    <section id="corporate" class="py-16 bg-black border-y border-gold-main/20 relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-4 md:px-6 text-center relative z-10">
+            <!-- 使用 flex row 確保標題橫向連貫 -->
+            <h3 class="text-2xl md:text-4xl font-bold mb-6 serif text-white keep-all flex flex-col sm:flex-row justify-center items-center gap-1 sm:gap-4">
+                <span>誠邀企業公司行號</span>
+                <span class="text-gold-gradient">洽談特約合作</span>
+            </h3>
+            <p class="text-gray-300 mb-8 leading-relaxed text-sm md:text-lg max-w-3xl mx-auto font-light">
+                我們深知企業對於安全、準時、隱私的高度要求。<br class="hidden md:block">
+                提供專人管家式對接，簡化行政流程，為貴賓提供最體面的移動方案。
             </p>
             
-            <div class="glass-card rounded-3xl p-8 md:p-12 border border-gold-main/30 shadow-[0_0_40px_rgba(0,0,0,0.8)]">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 md:divide-x divide-gold-main/20">
-                    <div class="px-6 py-4">
-                        <p class="text-gold-main font-bold text-3xl md:text-4xl serif mb-2">24H</p>
-                        <p class="text-white font-bold text-lg md:text-xl mb-2 tracking-widest">全年無休</p>
-                        <p class="text-sm text-gray-500 tracking-widest uppercase">皆可派車</p>
+            <div class="glass-card rounded-2xl md:rounded-3xl p-5 md:p-10 border border-gold-main/30 shadow-[0_0_30px_rgba(0,0,0,0.6)]">
+                <!-- 強制 3 欄橫排 -->
+                <div class="grid grid-cols-3 gap-2 md:gap-0 md:divide-x divide-gold-main/20">
+                    <div class="px-2 md:px-6 py-2">
+                        <p class="text-gold-main font-bold text-xl md:text-3xl serif mb-1">24H</p>
+                        <p class="text-white font-bold text-sm md:text-lg mb-1 tracking-widest keep-all">全年無休</p>
+                        <p class="text-[10px] md:text-xs text-gray-500 tracking-widest uppercase hidden sm:block">皆可派車</p>
                     </div>
-                    <div class="px-6 py-4">
-                        <p class="text-gold-main font-bold text-3xl md:text-4xl serif mb-2">VIP</p>
-                        <p class="text-white font-bold text-lg md:text-xl mb-2 tracking-widest">商務接待</p>
-                        <p class="text-sm text-gray-500 tracking-widest uppercase">尊榮禮遇</p>
+                    <div class="px-2 md:px-6 py-2 border-l border-gold-main/20 md:border-l-0">
+                        <p class="text-gold-main font-bold text-xl md:text-3xl serif mb-1">VIP</p>
+                        <p class="text-white font-bold text-sm md:text-lg mb-1 tracking-widest keep-all">商務接待</p>
+                        <p class="text-[10px] md:text-xs text-gray-500 tracking-widest uppercase hidden sm:block">尊榮禮遇</p>
                     </div>
-                    <div class="px-6 py-4">
-                        <p class="text-gold-main font-bold text-3xl md:text-4xl serif mb-2">NET</p>
-                        <p class="text-white font-bold text-lg md:text-xl mb-2 tracking-widest">企業月結</p>
-                        <p class="text-sm text-gray-500 tracking-widest uppercase">簡化對帳</p>
+                    <div class="px-2 md:px-6 py-2 border-l border-gold-main/20 md:border-l-0">
+                        <p class="text-gold-main font-bold text-xl md:text-3xl serif mb-1">NET</p>
+                        <p class="text-white font-bold text-sm md:text-lg mb-1 tracking-widest keep-all">企業月結</p>
+                        <p class="text-[10px] md:text-xs text-gray-500 tracking-widest uppercase hidden sm:block">簡化對帳</p>
                     </div>
                 </div>
             </div>
@@ -279,34 +287,35 @@
     </section>
 
     <!-- 預約聯絡區 -->
-    <section id="contact" class="py-32 px-6 bg-zinc-900/40">
-        <div class="max-w-4xl mx-auto glass-card p-10 md:p-20 rounded-3xl text-center border border-gold-main/40 relative overflow-hidden">
-            <div class="absolute bottom-0 left-0 w-64 h-64 bg-gold-main/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+    <section id="contact" class="py-20 px-4 md:px-6 bg-zinc-900/40">
+        <div class="max-w-4xl mx-auto glass-card p-8 md:p-16 rounded-2xl md:rounded-3xl text-center border border-gold-main/40 relative overflow-hidden">
+            <div class="absolute bottom-0 left-0 w-48 h-48 bg-gold-main/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
             
-            <h3 class="text-4xl md:text-5xl font-bold mb-6 serif text-gold-gradient relative z-10 tracking-widest">尊榮預約．即刻啟航</h3>
-            <p class="text-gray-300 mb-12 relative z-10 text-lg md:text-xl font-light">無論機場接送、商務往返或包車旅遊，請與我們的專員連繫。</p>
+            <h3 class="text-2xl md:text-4xl font-bold mb-4 serif text-gold-gradient relative z-10 tracking-widest keep-all">尊榮預約．即刻啟航</h3>
+            <p class="text-gray-300 mb-8 relative z-10 text-sm md:text-lg font-light">無論機場接送、商務往返或包車旅遊，請與我們的專員連繫。</p>
             
-            <div class="space-y-10 relative z-10">
+            <div class="space-y-6 md:space-y-8 relative z-10">
                 <a href="tel:0915926166" class="block group">
-                    <p class="text-sm md:text-base text-gold-main tracking-[0.4em] mb-3 uppercase font-bold">Service Hotline</p>
-                    <p class="text-5xl md:text-6xl font-bold text-white tracking-tighter group-hover:text-gold-light transition duration-300 drop-shadow-lg">0915-926-166</p>
+                    <p class="text-xs md:text-sm text-gold-main tracking-[0.4em] mb-2 uppercase font-bold">Service Hotline</p>
+                    <p class="text-3xl md:text-5xl font-bold text-white tracking-tighter group-hover:text-gold-light transition duration-300 drop-shadow-lg">0915-926-166</p>
                 </a>
                 
-                <div class="w-full max-w-lg mx-auto h-[1px] bg-gradient-to-r from-transparent via-gold-main/40 to-transparent"></div>
+                <div class="w-full max-w-sm mx-auto h-[1px] bg-gradient-to-r from-transparent via-gold-main/40 to-transparent"></div>
                 
-                <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-20">
+                <!-- 強制橫向並列 -->
+                <div class="flex flex-row justify-center items-center space-x-6 md:space-x-16">
                     <div class="text-center">
-                        <p class="text-sm text-gray-500 tracking-widest mb-2 uppercase">Line Official</p>
-                        <a href="https://line.me/ti/p/@rs168" class="text-2xl md:text-3xl text-gold-main font-bold hover:text-white transition">@rs168</a>
+                        <p class="text-[10px] md:text-xs text-gray-500 tracking-widest mb-1 uppercase">Line Official</p>
+                        <a href="https://line.me/ti/p/@rs168" class="text-lg md:text-2xl text-gold-main font-bold hover:text-white transition">@rs168</a>
                     </div>
-                    <div class="text-center">
-                        <p class="text-sm text-gray-500 tracking-widest mb-2 uppercase">Official Email</p>
-                        <a href="mailto:RS@RS-LIMO.COM" class="text-2xl md:text-3xl text-white font-bold hover:text-gold-main transition uppercase">RS@RS-LIMO.COM</a>
+                    <div class="text-center border-l border-white/10 pl-6 md:pl-16">
+                        <p class="text-[10px] md:text-xs text-gray-500 tracking-widest mb-1 uppercase">Official Email</p>
+                        <a href="mailto:RS@RS-LIMO.COM" class="text-lg md:text-2xl text-white font-bold hover:text-gold-main transition uppercase">RS@RS-LIMO.COM</a>
                     </div>
                 </div>
 
-                <div class="pt-10">
-                    <a href="https://line.me/ti/p/@rs168" class="btn-gold px-14 md:px-24 py-5 md:py-6 rounded-full text-xl md:text-2xl inline-block tracking-[0.2em] font-bold shadow-[0_0_40px_rgba(212,175,55,0.4)]">
+                <div class="pt-6 md:pt-8">
+                    <a href="https://line.me/ti/p/@rs168" class="btn-gold px-10 md:px-16 py-4 md:py-5 rounded-full text-base md:text-xl inline-block tracking-[0.2em] font-bold shadow-[0_0_20px_rgba(212,175,55,0.4)]">
                         立即 LINE 線上詢價
                     </a>
                 </div>
@@ -315,9 +324,9 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 border-t border-white/10 text-center px-6 bg-black">
-        <div class="max-w-7xl mx-auto text-gray-500 text-sm font-light">
-            <p class="mb-4 text-gold-dark font-medium tracking-[0.3em] uppercase text-base">選擇瑞陞，瑞氣東昇，陞級您的每一趟出行</p>
+    <footer class="py-8 md:py-10 border-t border-white/10 text-center px-4 md:px-6 bg-black">
+        <div class="max-w-7xl mx-auto text-gray-500 text-xs md:text-sm font-light">
+            <p class="mb-2 md:mb-3 text-gold-dark font-medium tracking-[0.2em] md:tracking-[0.3em] uppercase keep-all">選擇瑞陞，瑞氣東昇，陞級您的每一趟出行</p>
             <p>&copy; 2024 瑞陞租車 RS LIMO. All Rights Reserved.</p>
         </div>
     </footer>
