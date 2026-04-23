@@ -4,21 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>瑞陞租車 RS Limo | 行止之間，盡顯非凡</title>
-    
-    <!-- 1. Meta Refresh 強制跳轉 (0秒後跳轉) -->
-    <meta http-equiv="refresh" content="0;url=http://www.rs-limo.com/">
-    
-    <!-- 2. SEO 權重轉移宣告 -->
-    <link rel="canonical" href="http://www.rs-limo.com/">
-    
-    <!-- 3. JavaScript 強制替換 (最高優先級，確保強制跳轉) -->
-    <script>
-        // 為了避免在預覽環境中不斷跳轉，加上簡單的判斷，確保只在實際部署時跳轉
-        if (window.location.hostname !== "localhost" && window.location.hostname !== "127.0.0.1" && !window.location.href.includes('preview') && !window.location.hostname.includes('google')) {
-             window.location.replace("http://www.rs-limo.com/");
-        }
-    </script>
-
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
@@ -346,42 +331,16 @@
         </div>
     </footer>
 
-</body>
-</html>
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        h2 {
-            color: #D4AF37;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-        }
-        p {
-            color: #888;
-            font-size: 14px;
-        }
-        a {
-            color: #D4AF37;
-            text-decoration: none;
-            margin-top: 15px;
-            border-bottom: 1px solid #D4AF37;
-            padding-bottom: 2px;
-        }
-        a:hover {
-            color: #F9E498;
-        }
-    </style>
-
-    <!-- 3. JavaScript 強制替換 (最高優先級，且不會產生上一頁的歷史紀錄) -->
     <script>
-        window.location.replace("http://www.rs-limo.com/");
+        // 平滑滾動
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
     </script>
-</head>
-<body>
-    <div class="loader"></div>
-    <h2>正在為您跳轉至全新官網</h2>
-    <p>Please wait while we redirect you to our new website...</p>
-    <p>如果系統沒有自動跳轉，請點擊下方連結：</p>
-    <a href="http://www.rs-limo.com/">前往 瑞陞租車 RS LIMO 官網</a>
 </body>
 </html>
