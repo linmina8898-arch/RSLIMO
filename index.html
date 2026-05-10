@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 1. 強制瀏覽器將網頁內所有不安全的資源(http)升級為安全連結(https) -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    
     <title>瑞陞租車 RS Limo | 行止之間，盡顯非凡</title>
+    
+    <!-- 2. 設定標準網址，告訴搜尋引擎您的官方版本是 HTTPS，有利於 SEO -->
+    <link rel="canonical" href="https://www.rs-limo.com/" />
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
@@ -265,7 +272,6 @@
     <!-- 企業特約專區 -->
     <section id="corporate" class="py-16 bg-black border-y border-gold-main/20 relative overflow-hidden">
         <div class="max-w-6xl mx-auto px-4 md:px-6 text-center relative z-10">
-            <!-- 使用 flex row 確保標題橫向連貫 -->
             <h3 class="text-2xl md:text-4xl font-bold mb-6 serif text-white keep-all flex flex-col sm:flex-row justify-center items-center gap-1 sm:gap-4">
                 <span>誠邀企業公司行號</span>
                 <span class="text-gold-gradient">洽談特約合作</span>
@@ -276,7 +282,6 @@
             </p>
             
             <div class="glass-card rounded-2xl md:rounded-3xl p-5 md:p-10 border border-gold-main/30 shadow-[0_0_30px_rgba(0,0,0,0.6)]">
-                <!-- 強制 3 欄橫排 -->
                 <div class="grid grid-cols-3 gap-2 md:gap-0 md:divide-x divide-gold-main/20">
                     <div class="px-2 md:px-6 py-2">
                         <p class="text-gold-main font-bold text-xl md:text-3xl serif mb-1">24H</p>
@@ -314,7 +319,6 @@
                 
                 <div class="w-full max-w-sm mx-auto h-[1px] bg-gradient-to-r from-transparent via-gold-main/40 to-transparent"></div>
                 
-                <!-- 強制橫向並列，並縮小間距與字體以保持單行 -->
                 <div class="flex flex-row justify-center items-center space-x-4 md:space-x-12">
                     <div class="text-center">
                         <p class="text-[10px] md:text-xs text-gray-500 tracking-widest mb-1 uppercase whitespace-nowrap">Line Official</p>
@@ -339,7 +343,7 @@
     <footer class="py-8 md:py-10 border-t border-white/10 text-center px-4 md:px-6 bg-black">
         <div class="max-w-7xl mx-auto text-gray-500 text-xs md:text-sm font-light">
             <p class="mb-2 md:mb-3 text-gold-dark font-medium tracking-[0.2em] md:tracking-[0.3em] uppercase keep-all">選擇瑞陞，瑞氣東昇，陞級您的每一趟出行</p>
-            <p>&copy; 2024 瑞陞租車 RS LIMO. All Rights Reserved.</p>
+            <p>&copy; 2026 瑞陞租車 RS LIMO. All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -348,9 +352,14 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const targetId = this.getAttribute('href');
+                if (targetId === "#") return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
     </script>
